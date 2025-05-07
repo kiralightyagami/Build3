@@ -1,16 +1,20 @@
 require("dotenv").config();
 import express from "express";
+import cors from "cors";
 import { GoogleGenAI } from "@google/genai";
 import { getSystemPrompt } from "./prompts";
 import {basePrompt as nodeBasePrompt } from "./defaults/node";
 import {basePrompt as reactBasePrompt } from "./defaults/react";
 import {BASE_PROMPT} from "./prompts";
-import { GenerateSchema, TemplateSchema } from "./types/index";
+import { GenerateSchema, TemplateSchema } from "./types/types";
+import { authMiddleware } from "./middleware/middleware";
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
 const ai = new GoogleGenAI({ apiKey:GEMINI_API_KEY });
 const app = express();
 app.use(express.json());
+app.use(cors());
+//app.use(authMiddleware);
 
 app.post("/template", async (req, res) => {
     
@@ -57,7 +61,7 @@ app.post("/template", async (req, res) => {
     res.status(403).json({message: "Invalid"});
     return;
         
-    });
+});
     
 app.post("/generate", async (req, res) => {
 
@@ -83,33 +87,6 @@ app.post("/generate", async (req, res) => {
 
 });
 
-
-   
-
-// //async function main() {
-  
-//   const response = await ai.models.generateContentStream({
-//     model: "gemini-2.0-flash",
-//     config:{
-//         maxOutputTokens: 8000,
-//         temperature: 0.5,
-//         systemInstruction: getSystemPrompt()
-
-//     },
-//     contents: [{
-//       role: "user",
-//       parts: [{ text: 'write a short story about a cat' },
-//               { text: 'write a short story about a dog'},
-//               { text: 'write a short story about a bird'}] 
-//       }]
-//   });
-  
-//   for await (const chunk of response) {
-//     console.log(chunk.text);
-//   }
-// //}
-
-//main();
 
 app.listen(3000, () => {
     console.log("Server is running on port 3000");
