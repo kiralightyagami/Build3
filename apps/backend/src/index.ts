@@ -33,25 +33,43 @@ app.post("/template", async (req, res) => {
     
     if(answer === "react") {
         res.json({
-            prompts :[BASE_PROMPT, reactBasePrompt],
-            uiPrompts: []
+            prompts :[BASE_PROMPT, `Here is an artifact that contains all files of the project visible to you.\nConsider the contents of ALL files in the project.\n\n${reactBasePrompt}\n\nHere is a list of files that exist on the file system but are not being shown to you:\n\n  - .gitignore\n  - package-lock.json\n`],
+            uiPrompts: [reactBasePrompt]
         })
         return;
     }
 
     if(answer === "node") {
         res.json({
-            prompts :[BASE_PROMPT, nodeBasePrompt],
-            uiPrompts: []
+            prompts :[BASE_PROMPT, `Here is an artifact that contains all files of the project visible to you.\nConsider the contents of ALL files in the project.\n\n${nodeBasePrompt}\n\nHere is a list of files that exist on the file system but are not being shown to you:\n\n  - .gitignore\n  - package-lock.json\n`],
+            uiPrompts: [nodeBasePrompt]
         })
         return;
     }
    
-    res.status(403).json({message: "Invalid answer"});
+    res.status(403).json({message: "Invalid"});
     return;
         
     });
     
+app.post("/generate", async (req, res) => {
+    const messages = req.body.messages;
+    const response = await ai.models.generateContent({
+        model: "gemini-2.0-flash",
+        config:{
+            maxOutputTokens: 8000,
+            temperature: 0.5,
+            systemInstruction: getSystemPrompt()
+        },
+        contents: messages
+    });
+
+    console.log(response.text);
+
+    res.json({})
+
+});
+
     
 
 // //async function main() {
