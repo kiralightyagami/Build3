@@ -12,7 +12,7 @@ async function main() {
   const response = await ai.models.generateContentStream({
     model: "gemini-2.0-flash",
     config:{
-        maxOutputTokens: 1024,
+        maxOutputTokens: 8000,
         temperature: 0.5,
         systemInstruction: getSystemPrompt()
 
