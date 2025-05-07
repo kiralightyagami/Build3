@@ -10,6 +10,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@google/genai": "^0.12.0",
+    "@google/generative-ai": "^0.24.1",
     "backend": "file:",
     "dotenv": "^16.5.0"
   },
