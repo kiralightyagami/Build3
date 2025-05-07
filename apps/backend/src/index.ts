@@ -5,6 +5,7 @@ import { getSystemPrompt } from "./prompts";
 import {basePrompt as nodeBasePrompt } from "./defaults/node";
 import {basePrompt as reactBasePrompt } from "./defaults/react";
 import {BASE_PROMPT} from "./prompts";
+import { GenerateSchema, TemplateSchema } from "./types/index";
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
 const ai = new GoogleGenAI({ apiKey:GEMINI_API_KEY });
@@ -12,8 +13,14 @@ const app = express();
 app.use(express.json());
 
 app.post("/template", async (req, res) => {
-    const prompt = req.body.prompt;
     
+    const parsedData = TemplateSchema.safeParse(req.body)
+    if(!parsedData.success) {
+        res.status(400).json({message: "Invalid request"});
+        return;
+    }
+    const prompt = parsedData.data.prompt;
+
     const response = await ai.models.generateContent({
         model: "gemini-2.0-flash",
         config:{
@@ -53,7 +60,13 @@ app.post("/template", async (req, res) => {
     });
     
 app.post("/generate", async (req, res) => {
-    const messages = req.body.messages;
+
+    const parsedData = GenerateSchema.safeParse(req.body)
+    if(!parsedData.success) {
+        res.status(400).json({message: "Invalid request"});
+        return;
+    }
+    const messages = parsedData.data.messages;
     const response = await ai.models.generateContent({
         model: "gemini-2.0-flash",
         config:{
@@ -70,7 +83,8 @@ app.post("/generate", async (req, res) => {
 
 });
 
-    
+
+   
 
 // //async function main() {
   

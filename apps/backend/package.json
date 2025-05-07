@@ -13,9 +13,12 @@
     "@google/genai": "^0.12.0",
     "@google/generative-ai": "^0.24.1",
     "@types/express": "^5.0.1",
+    "@types/jsonwebtoken": "^9.0.9",
     "backend": "file:",
     "dotenv": "^16.5.0",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "zod": "^3.24.4"
   },
   "devDependencies": {
     "@types/node": "^22.15.3"
