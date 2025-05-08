@@ -67,6 +67,7 @@ geminiRouter.post("/generate", async (req, res) => {
         res.status(400).json({message: "Invalid request"});
         return;
     }
+    console.log("genrate called")
     const messages = parsedData.data.messages;
     const response = await ai.models.generateContent({
         model: "gemini-2.0-flash",
@@ -80,6 +81,8 @@ geminiRouter.post("/generate", async (req, res) => {
 
     console.log(response.text);
 
-    res.json({})
+    res.json({
+        response: (response.text as string)
+    });
 
 });
