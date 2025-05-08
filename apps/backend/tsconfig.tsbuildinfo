@@ -1,1 +1,1 @@
-{"root":["./src/constants.ts","./src/index.ts","./src/prompts.ts","./src/stripindents.ts","./src/types.d.ts","./src/defaults/node.ts","./src/defaults/react.ts","./src/middleware/middleware.ts","./src/types/index.ts"],"version":"5.8.2"}
+{"root":["./src/constants.ts","./src/index.ts","./src/prompts.ts","./src/stripindents.ts","./src/types.d.ts","./src/defaults/node.ts","./src/defaults/react.ts","./src/middleware/middleware.ts","./src/routes/clauderouter.ts","./src/routes/geminirouter.ts","./src/types/types.ts"],"version":"5.8.2"}
