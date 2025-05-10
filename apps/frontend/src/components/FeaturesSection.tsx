@@ -51,17 +51,17 @@ export function FeaturesSection() {
     >
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-2xl sm:text-3xl text-center text-white font-medium">
-          Why Choose Bolt for Creating Website?
+          Why Choose Build3 for Creating Website?
         </h2>
         <p className="text-lg text-center mt-4 max-w-lg mx-auto text-gray-400">
-          Bolt offers a powerful suite of features to make web development and
+          Build3 offers a powerful suite of features to make web development and
           deployment effortless.
         </p>
         <div className="text-center text-3xl text-white font-medium mt-20">
           <h1>Powerful Features!</h1>
         </div>
         <div className="text-center text-lg text-gray-400  mt-4">
-          <h3>Bolt is a powerful tool that combines the best of AI and web</h3>
+          <h3>Build3 is a powerful tool that combines the best of AI and web development</h3>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-8 text-center px-4 sm:px-0 max-w-7xl mx-auto">

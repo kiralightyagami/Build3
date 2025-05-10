@@ -39,7 +39,7 @@ export function HeroSection({ prompt, setPrompt }: HeroSectionProps) {
 
           <p className="text-base  font-normal text-gray-400 max-w-2xl mx-auto">
             Simply describe, create, and customize your website in seconds with
-            <span className="text-blue-400 font-semibold"> Bolt</span>
+            <span className="text-blue-400 font-semibold"> Build3</span>
           </p>
         </motion.div>
 

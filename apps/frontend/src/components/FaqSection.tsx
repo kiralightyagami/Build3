@@ -6,29 +6,29 @@ import { cn } from '../utils/cn';
 export function FaqSection() {
   const faqs = [
     {
-      question: 'How does Bolt turn my prompts into a website?',
+      question: 'How does Build3 turn my prompts into a website?',
       answer:
-        'Bolt uses advanced AI to interpret your natural language description and generate the necessary code to create a fully functional website. It analyzes your requirements and produces HTML, CSS, and JavaScript files that match your vision.',
+        'Build3 uses advanced AI to interpret your natural language description and generate the necessary code to create a fully functional website. It analyzes your requirements and produces HTML, CSS, and JavaScript files that match your vision.',
     },
     {
       question: 'Can I customize the generated website?',
       answer:
-        'Absolutely! Bolt provides a full-featured code editor where you can make precise adjustments to any aspect of your website. The changes are reflected in real-time in the preview window.',
+        'Absolutely! Build3 provides a full-featured code editor where you can make precise adjustments to any aspect of your website. The changes are reflected in real-time in the preview window.',
     },
     {
-      question: 'What kind of websites can I create with Bolt?',
+      question: 'What kind of websites can I create with Build3?',
       answer:
-        "Bolt can help you create a wide range of websites, from simple landing pages to complex web applications with dynamic functionality. It's suitable for portfolios, blogs, e-commerce sites, dashboards, and more.",
+        "Build3 can help you create a wide range of websites, from simple landing pages to complex web applications with dynamic functionality. It's suitable for portfolios, blogs, e-commerce sites, dashboards, and more.",
     },
     {
-      question: 'Do I need coding experience to use Bolt?',
+      question: 'Do I need coding experience to use Build3?',
       answer:
-        'No coding experience is required. Bolt is designed to be accessible to everyone, regardless of technical background. However, if you do have coding experience, you can leverage it to make more advanced customizations.',
+        'No coding experience is required. Build3 is designed to be accessible to everyone, regardless of technical background. However, if you do have coding experience, you can leverage it to make more advanced customizations.',
     },
     {
       question: 'How do I deploy my website?',
       answer:
-        'Bolt allows you to download your generated website as a zip file. You can then host it on any web server or platform of your choice, such as GitHub Pages, Netlify, or Vercel.',
+        'Build3 allows you to download your generated website as a zip file. You can then host it on any web server or platform of your choice, such as GitHub Pages, Netlify, or Vercel.',
     },
   ];
 
@@ -43,7 +43,7 @@ export function FaqSection() {
           >
             <h2 className="text-3xl font-semibold text-white mb-4">FAQ's </h2>
             <p className="text-lg text-gray-400">
-              Find answers to common questions about Bolt.
+              Find answers to common questions about Build3.
             </p>
           </motion.div>
         </div>
